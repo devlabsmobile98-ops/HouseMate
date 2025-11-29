@@ -1,0 +1,120 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+@theme {
+  /* Color palette - Pastel and Dark versions */
+  /* Purple */
+  --color-purple-light: #e9dff8;
+  --color-purple-dark: #403361;
+
+  /* Sage Green */
+  --color-sage-light: #d4e3d0;
+  --color-sage-dark: #7a9b6f;
+
+  /* Blue */
+  --color-blue-light: #d4e8f0;
+  --color-blue-dark: #4a6b7c;
+
+  /* Yellow */
+  --color-yellow-light: #fff5cc;
+  --color-yellow-dark: #d4b938;
+
+  /* Peach */
+  --color-peach-light: #ffd9c9;
+  --color-peach-dark: #e88560;
+
+  /* Pink */
+  --color-pink-light: #ffd9e8;
+  --color-pink-dark: #d97aa0;
+
+  /* Other colors */
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-text: #000000;
+  --color-text-light: #4a4a4a;
+
+  /* Shadows */
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-large: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+p,
+span,
+button,
+input,
+textarea,
+select,
+label {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Force calendar/time picker icons to be black */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg)
+    brightness(0%) contrast(100%);
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .shadow-card {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+}
