@@ -95,11 +95,7 @@ export function BulletinBoardScreen() {
           style={{ backgroundColor: "#fffdf0" }}
         >
           <div className="grid grid-cols-2 gap-4">
-            {activeHouse.notes.length === 0 && (
-              <div className="col-span-2 text-center text-text-light">
-                No notes yet. Share a reminder!
-              </div>
-            )}
+
             {activeHouse.notes.map((note, index) => {
               const colors = colorPairs[index % colorPairs.length];
               const rotation = ((index * 3) % 5) - 2;

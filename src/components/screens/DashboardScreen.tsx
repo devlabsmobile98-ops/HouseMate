@@ -111,7 +111,7 @@ export function DashboardScreen() {
 
   return (
     <MobileContainer>
-      <div className="h-full flex flex-col pb-20">
+      <div className="h-full flex flex-col pb-20 overflow-y-auto">
         <div
           className="p-6"
           style={{ backgroundColor: "#e9dff8" }}
@@ -160,18 +160,17 @@ export function DashboardScreen() {
               boxShadow: "var(--shadow-soft)",
             }}
           >
-            <div className="mb-4">
-              <p className="text-text-light text-sm mb-2">Your House</p>
-              <div className="flex items-center justify-between">
-                <h3 className="text-text">{activeHouse.name}</h3>
-                <button
-                  onClick={() => navigate("/house-code")}
-                  className="flex items-center gap-2 text-sm font-semibold text-text"
-                >
-                  <KeyRound className="w-4 h-4" />
-                  Share code
-                </button>
-              </div>
+            {/* House name + Share Code aligned correctly */}
+            <div className="mb-4 flex items-center justify-between">
+              <p className="text-text-light text-sm">{activeHouse.name}</p>
+
+              <button
+                onClick={() => navigate("/house-code")}
+                className="flex items-center gap-2 text-sm font-semibold text-text"
+              >
+                <KeyRound className="w-4 h-4" />
+                Share code
+              </button>
             </div>
 
             <div className="grid grid-cols-2 gap-3">
@@ -246,14 +245,14 @@ export function DashboardScreen() {
         </div>
 
         <div
-          className="flex-1 p-6 overflow-y-auto"
+          className="flex-1 p-6"
           style={{ backgroundColor: "#f5f0fc" }}
         >
           <h3 className="text-text mb-4 text-center">
             Quick Actions
           </h3>
-          {/* Spacer to force space before buttons */}
-<div style={{ height: "30px" }}></div>
+
+          <div style={{ height: "30px" }}></div>
 
           <div className="grid grid-cols-2 gap-4">
             {features.map((feature) => (
